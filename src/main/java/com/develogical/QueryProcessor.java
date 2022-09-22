@@ -1,7 +1,7 @@
 package com.develogical;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+// import java.util.regex.Matcher;
+// import java.util.regex.Pattern;
 import java.util.Arrays;
 
 public class QueryProcessor {
@@ -24,7 +24,18 @@ public class QueryProcessor {
 
             ans += Integer.parseInt(numbers[idx-1]);
             ans += Integer.parseInt(numbers[idx+1]);
-            
+
+            return String.valueOf(ans);
+        }
+        if (query.toLowerCase().contains("minus")) {
+            String[] numbers = query.split(" ");
+
+            int idx = Arrays.asList(numbers).indexOf("minus");
+
+            int ans = Integer.parseInt(numbers[idx-1]);;
+
+            ans -= Integer.parseInt(numbers[idx+1]);
+
             return String.valueOf(ans);
         }
         return "";

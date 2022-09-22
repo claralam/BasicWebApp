@@ -34,8 +34,13 @@ public class QueryProcessorTest {
     }
 
     @Test
-    public void knowsAddition() throws Exception {
+    public void knowsAdditionTwoNum() throws Exception {
         assertThat(queryProcessor.process("what is 4 plus 9"), containsString("13"));
+    }
+
+    @Test
+    public void knowsSubtrationTwoNum() throws Exception {
+        assertThat(queryProcessor.process("what is 345 minus 123"), containsString("222"));
     }
 
 }
